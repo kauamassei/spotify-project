@@ -22,10 +22,10 @@ app.get("/api/songs", async(request, response) => { // endpoint = rota
     response.send(await db.collection("songs").find({}).toArray())
 });
 
-app.use(express.static(path.join(__dirname, "../../frontend/dist")));
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 app.get("*", async(request, response) => {
-    response.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
+    response.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
 });
 
 app.listen(PORT, () => {
